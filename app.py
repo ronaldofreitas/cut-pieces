@@ -39,7 +39,8 @@ def receive():
     name_file = remov_ext[0]
 
     tempfile = full_file_name
-    destname = name_file+".aac"
+    #destname = name_file+".aac"
+    destname = name_file+".mp3"
 
     if not os.path.exists(tempfile):
         os.mknod(tempfile)
@@ -47,7 +48,8 @@ def receive():
         storage_client.download_blob_to_file(gs_uri, file_obj)
 
     a = AudioSegment.from_file(tempfile)
-    a.export(destname, bitrate="30k", format="adts")
+    a.export(destname, bitrate="30k", format="mp3")
+    #a.export(destname, bitrate="30k", format="adts")
 
     blob = bucket_destino.blob(fire_user_uid+'/'+manticore_id+'/'+uid_file+'/full/'+destname)
     blob.upload_from_filename(destname)

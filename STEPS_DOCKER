@@ -9,7 +9,7 @@ docker build -t ronaldofreitas/cut-play .
 
 pega o ID da imagem... docker images
 
-docker tag 0e55fdeef9b3 gcr.io/catalobyte-311413/catalobyte/cut-play && docker push gcr.io/catalobyte-311413/catalobyte/cut-play
+docker tag c188bf0a2228 gcr.io/catalobyte-311413/catalobyte/cut-play && docker push gcr.io/catalobyte-311413/catalobyte/cut-play
 
 
 
